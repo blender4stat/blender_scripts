@@ -4,11 +4,11 @@ import numpy as np
 import statistics
 
 rseed = 8594375
-xmin  = -10
-xmax  =  10
-n     =  20
-ymin  =   0
-ymax  =  10
+xmin  =   -5 
+xmax  =    5
+n     =  100
+ymin  =    0
+ymax  =   20
 
 np.random.seed(rseed)
 xmean = statistics.mean([xmin, xmax])
@@ -17,7 +17,7 @@ ydelta = (ymax - ymin)/n
 
 xall = []
 for i in range(0, n):
-    xall.append(round(np.random.normal(xmean, xmidrange/3.5), 0))
+    xall.append(np.random.normal(xmean, xmidrange/3.5))
     
 yall = []
 for i in range(0, n):
@@ -25,7 +25,7 @@ for i in range(0, n):
 
 import bpy
 
-mesh        = bpy.data.meshes.new("newmesh")
+mesh        = bpy.data.meshes.new("sample_points")
 object      = bpy.data.objects.new(mesh.name, mesh)
 collection  = bpy.data.collections.get("Collection")
 collection.objects.link(object)
