@@ -12,7 +12,7 @@ z = scale_z * norm.pdf(x / scale_x)
 
 import bpy
 
-mesh        = bpy.data.meshes.new("newmesh")
+mesh        = bpy.data.meshes.new("normal_curve")
 object      = bpy.data.objects.new(mesh.name, mesh)
 collection  = bpy.data.collections.get("Collection")
 collection.objects.link(object)
