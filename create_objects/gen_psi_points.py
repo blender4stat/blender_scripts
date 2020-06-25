@@ -1,7 +1,6 @@
 # Generate random vertices along direction.
 
 import numpy as np
-import statistics
 
 n   = 500
 x1  = np.random.uniform(-1.5, 1.5, n)
@@ -15,8 +14,6 @@ x2  = np.random.normal(
             (np.absolute(y2 - 3/2)**4)/20, .025))
 xall = np.concatenate((x1, x2))
 yall = np.concatenate((y1, y2))
-#xall = x2l
-#yall = y2
 selected = yall < 3
 x = xall[selected]
 y = yall[selected]
